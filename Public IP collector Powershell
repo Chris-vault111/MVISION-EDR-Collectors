@@ -1,0 +1,4 @@
+$ipinfo = Invoke-RestMethod http://ipinfo.io/json 
+$ipinfo.ip = $ipinfo|convertto-Csv -NoTypeInformation|Select-Object -skip 1 
+$string = $ipinfo.ip -replace '"', ""
+$string 
